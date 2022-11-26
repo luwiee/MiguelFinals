@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "677003902950",
+    "firebase_url": "https://os-finals-default-rtdb.firebaseio.com",
+    "project_id": "os-finals",
+    "storage_bucket": "os-finals.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677003902950:android:4e545b02ba1685e98fa027",
+        "android_client_info": {
+          "package_name": "com.miguel.osFinals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677003902950-2ri8clq4jkperoelvcokcjkrl01m9voa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEMVBtRhpzxghUU-06INBrem9Hi-O1O7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677003902950-2ri8clq4jkperoelvcokcjkrl01m9voa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

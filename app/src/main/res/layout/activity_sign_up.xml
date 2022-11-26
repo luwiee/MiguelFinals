@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="606dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/label_sign_up"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/colorBackgroundHighlight"
+        android:fontFamily="sans-serif-condensed-light"
+        android:hint="@string/enter_name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="@color/colorText"
+        android:textColorHint="#78909C"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/colorBackgroundHighlight"
+        android:fontFamily="sans-serif-condensed-light"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="@color/colorText"
+        android:textColorHint="#78909C"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/colorBackgroundHighlight"
+        android:fontFamily="sans-serif-condensed-light"
+        android:hint="@string/enter_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorTextHighlight"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/colorBackgroundHighlight"
+        android:fontFamily="sans-serif-condensed-light"
+        android:hint="@string/enter_confirm_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorTextHighlight"
+        android:autofillHints="" />
+
+    <Spinner
+        android:id="@+id/spnYearLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/yearLevel"
+        android:minHeight="48dp" />
+
+    <Spinner
+        android:id="@+id/spnCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/courses"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/btn_sign_up"
+        android:textColor="@color/colorAccent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/colorDarkGray"
+        android:text="@string/btn_login"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/btnImportFile"
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/label_import_button"
+        android:textColor="@color/colorAccent" />
+
+</LinearLayout>
