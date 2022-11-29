@@ -138,4 +138,13 @@
         android:text="@string/label_import_button"
         android:textColor="@color/colorAccent" />
 
+    <Button
+        android:id="@+id/btnDownloadTemplate"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/label_download_template"
+        android:textColor="@color/colorAccent" />
+
 </LinearLayout>

@@ -1,21 +1,28 @@
 package com.miguel.osFinals.activity
 
+import android.app.DownloadManager
 import android.content.ContentResolver
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
+import android.os.Environment.DIRECTORY_DOWNLOADS
 import android.provider.MediaStore
 import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.miguel.osFinals.R
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.apache.poi.*
@@ -34,12 +41,15 @@ class SignUpActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
-
+    private lateinit var storage: FirebaseStorage
+    private lateinit var storageRef: StorageReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
         auth = FirebaseAuth.getInstance()
+        storage = FirebaseStorage.getInstance()
+        storageRef = storage.reference
 
         btnSignUp.setOnClickListener {
             val userName = etName.text.toString()
@@ -88,6 +98,32 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        btnDownloadTemplate.setOnClickListener{
+            val pathReference = storageRef.child("files/Import Template.xlsx")
+
+
+            //val localFile = File.createTempFile("importTemplate", "xlsx")
+
+            pathReference.downloadUrl.addOnSuccessListener { 
+                val url: String = it.toString()
+                downloadFile(applicationContext, "importTemplate", ".xlsx", Environment.DIRECTORY_DOWNLOADS, url )
+                Toast.makeText(applicationContext,"Template Downloading",Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
+    }
+
+    public fun downloadFile(context: Context, fileName: String, fileExtension: String, destinationDirectory: String, url: String){
+        val downloadManager: DownloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+        val uri:Uri = Uri.parse(url)
+        val request: DownloadManager.Request = DownloadManager.Request(uri)
+
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+        request.setDestinationInExternalPublicDir(destinationDirectory, fileName +fileExtension)
+        request.setTitle(fileName)
+
+        downloadManager.enqueue(request)
 
     }
 

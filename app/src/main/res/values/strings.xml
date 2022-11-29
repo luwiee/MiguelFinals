@@ -8,9 +8,11 @@
     <string name="btn_login">Login</string>
     <string name="btn_save">Save</string>
     <string name="label_sign_in">Sign In</string>
+
     <string name="label_message">Message</string>
     <string name="label_profile">Profile</string>
     <string name="label_import_button">Import Excel</string>
+    <string name="label_download_template">Download Template</string>
     <string name="enter_password">Enter Password</string>
     <string name="enter_confirm_password">Enter Confirm Password</string>
     <string name="announcementBtn">Announcement Button</string>
