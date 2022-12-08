@@ -51,7 +51,7 @@ class AnnouncementActivity : AppCompatActivity() {
         announcementRecycleView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
         firebaseUser = FirebaseAuth.getInstance().currentUser!!
-
+        getAnnouncementList()
         btnSubmitAnnouncement.setOnClickListener{
             val yearLevel:String= spinnerYearLevel.selectedItem.toString()
             val course:String = spinnerCourse.selectedItem.toString()
@@ -63,7 +63,7 @@ class AnnouncementActivity : AppCompatActivity() {
             sendAnnouncement(senderID, message,yearLevel,course)
         }
 
-        getAnnouncementList()
+
 
         databaseReferenceUser =
             FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.uid)
@@ -82,6 +82,8 @@ class AnnouncementActivity : AppCompatActivity() {
                 }
             }
         })
+
+
 
 
     }
