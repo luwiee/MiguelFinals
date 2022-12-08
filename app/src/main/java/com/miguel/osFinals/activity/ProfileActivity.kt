@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activtiy_profile.*
 import java.io.IOException
 import java.util.*
@@ -58,6 +59,9 @@ class ProfileActivity : AppCompatActivity() {
                 etYearLevel.setText(user!!.yearLevel)
                 etCourse.setText(user!!.course)
 
+                if (user.admin != "yes"){
+                    btnSignUp2.visibility = View.INVISIBLE
+                }
                 if (user.profileImage == "") {
                     userImage.setImageResource(R.drawable.profile_image)
                 } else {
@@ -65,6 +69,15 @@ class ProfileActivity : AppCompatActivity() {
                 }
             }
         })
+
+        btnSignUp2.setOnClickListener {
+            val intent = Intent(
+                this@ProfileActivity,
+                SignUpActivity::class.java
+            )
+            startActivity(intent)
+            finish()
+        }
 
         imgBack.setOnClickListener {
             onBackPressed()

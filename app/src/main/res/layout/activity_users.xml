@@ -22,14 +22,14 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgProfile"
-            android:layout_width="0dp"
+            android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_weight="0.5"
             android:padding="5dp"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="262dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:fontFamily="@font/gilroy_bold"
@@ -39,6 +39,16 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAnnouncementButton"
+            android:layout_width="77dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:clickable="true"
+            android:contentDescription="@string/announcementBtn"
+            app:srcCompat="@drawable/ic_baseline_notifications_24"
+            tools:ignore="RedundantDescriptionCheck" />
     </LinearLayout>
 
     <View
@@ -50,16 +60,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/userRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="546dp"
+        android:layout_height="641dp"
         android:background="@color/colorBackground" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAnnouncementButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:contentDescription="@string/announcementBtn"
-        app:srcCompat="@drawable/ic_baseline_notifications_24"
-        tools:ignore="RedundantDescriptionCheck" />
+
 
 </LinearLayout>

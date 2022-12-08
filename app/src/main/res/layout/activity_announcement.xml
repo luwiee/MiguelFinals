@@ -28,6 +28,7 @@
         android:background="?android:attr/listDivider" />
 
     <LinearLayout
+        android:id="@+id/adminAnnouncementLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">

@@ -142,6 +142,7 @@ class SignUpActivity : AppCompatActivity() {
                     hashMap["profileImage"] = ""
                     hashMap["yearLevel"] = yearLevel
                     hashMap["course"] = course
+                    hashMap["admin"] = "False"
 
                     databaseReference.setValue(hashMap).addOnCompleteListener(this){
                         if (it.isSuccessful){
